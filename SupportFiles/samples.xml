@@ -1,0 +1,338 @@
+<samples>
+  <sample>
+    <name>Actions</name>
+    <description>The Actions sample shows the PDF actions support available in Xfinium.Pdf library. The following actions are presented: go to actions for navigating to a random page in the document, uri actions for launching a web url, launch actions for launching an executable file on the local machine, remote go to actions for navigating to a PDF page in an external PDF file, named action for executing predefined operations and Javascript actions for executing Javascript code in a PDF file.</description>
+    <csharpsourcecode>actions_cs.html</csharpsourcecode>
+    <vbnetsourcecode>actions_vb.html</vbnetsourcecode>
+    <id>actions</id>
+  </sample>
+  <sample>
+    <name>Annotations</name>
+    <description>The Annotations sample shows the PDF annotations support available in Xfinium.Pdf library. The following annotations are presented: text annotations for adding notes to a PDF document, circle and square annotations for adding rectangles and ellipses, file attachment annotations for embedding files in a PDF document, free text annotations for drawing free text on a page, ink annotations for drawing freehand figures, line annotations for drawing lines, link annotations for adding links in a document to other content, polygon and polyline annotations for adding graphic figures, rich media annotations for including flash content in a document, rubber stamp annotations for stamping PDF pages, screen annotations for including movies in a PDF file, 3D annotations for displaying 3D content and redaction annotations for redacting sensitive content.</description>
+    <csharpsourcecode>annotations_cs.html</csharpsourcecode>
+    <vbnetsourcecode>annotations_vb.html</vbnetsourcecode>
+    <id>annotations</id>
+  </sample>
+  <sample>
+    <name>Barcodes</name>
+    <description>The Barcodes sample shows the capabilities of the barcode engine implemented in Xfinium.Pdf library. The barcodes are rendered as true vector graphics and not as raster images or barcode fonts. A wide range of 1D and 2D barcodes are supported.</description>
+    <csharpsourcecode>barcodes_cs.html</csharpsourcecode>
+    <vbnetsourcecode>barcodes_vb.html</vbnetsourcecode>
+    <id>barcodes</id>
+  </sample>
+  <sample>
+    <name>Bates numbers</name>
+    <description>The BatesNumbers sample shows how to add Bates numbers to a PDF document. The library also supports reading Bates numbers from PDF pages or removing the Bates numbers if they are properly formatted.</description>
+    <csharpsourcecode>batesnumbers_cs.html</csharpsourcecode>
+    <vbnetsourcecode>batesnumbers_vb.html</vbnetsourcecode>
+    <id>batesnumbers</id>
+  </sample>
+  <sample>
+    <name>Certifying signature</name>
+    <description>The CertifyingSignature sample shows how to sign a PDF file with a certifying signature.</description>
+    <csharpsourcecode>certifyingsignature_cs.html</csharpsourcecode>
+    <vbnetsourcecode>certifyingsignature_vb.html</vbnetsourcecode>
+    <id>certifyingsignature</id>
+  </sample>
+  <sample>
+    <name>Content extraction</name>
+    <description>The content extraction sample shows the text and image extraction support available in Xfinium.Pdf library. The sample shows how to load a PDF file and extract text and images from it, determine text and image position and the page and highlight text and images on the page.</description>
+    <csharpsourcecode>contentextraction_cs.html</csharpsourcecode>
+    <vbnetsourcecode>contentextraction_vb.html</vbnetsourcecode>
+    <id>contentextraction</id>
+  </sample>
+  <sample>
+    <name>Content stream</name>
+    <description>The content stream sample shows how to use the low level drawing capabilities to create page content.</description>
+    <csharpsourcecode>contentstream_cs.html</csharpsourcecode>
+    <vbnetsourcecode>contentstream_vb.html</vbnetsourcecode>
+    <id>contentstream</id>
+  </sample>
+  <sample>
+    <name>Document append</name>
+    <description>The DocumentAppend sample shows how to merge multiple PDF files in a single one. It also shows how to add a blank new page to the merged document and add outlines that points to each merged file.</description>
+    <csharpsourcecode>documentappend_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documentappend_vb.html</vbnetsourcecode>
+    <id>documentappend</id>
+  </sample>
+  <sample>
+    <name>Document incremental update</name>
+    <description>The DocumentIncrementalUpdate sample shows the support for the PDF incremental updates feature. This feature allows to load only the some parts of a PDF file and append only the changed objects at the end of the source file. While this feature can reduce the memory consumption it always increases the size of the source PDF file.</description>
+    <csharpsourcecode>documentincrementalupdate_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documentincrementalupdate_vb.html</vbnetsourcecode>
+    <id>documentincrementalupdate</id>
+  </sample>
+  <sample>
+    <name>Document page by page save</name>
+    <description>The DocumentPageByPageSave sample shows how to save a document page by page thus reducing memory consumption. It also shows how to save the page content piece by piece so pages with heavy vector content can be created with less memory.</description>
+    <csharpsourcecode>documentpagebypagesave_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documentpagebypagesave_vb.html</vbnetsourcecode>
+    <id>documentpagebypagesave</id>
+  </sample>
+  <sample>
+    <name>Document properties</name>
+    <description>The DocumentProperties sample shows how to set various document level properties, such as creator, producer, subject, keywords in document information dictionary, XMP metadata, viewer preferences and PDF version.</description>
+    <csharpsourcecode>documentproperties_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documentproperties_vb.html</vbnetsourcecode>
+    <id>documentproperties</id>
+  </sample>
+  <sample>
+    <name>Document split</name>
+    <description>The DocumentSplit sample shows how to split a PDF file into single pages.</description>
+    <csharpsourcecode>documentsplit_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documentsplit_vb.html</vbnetsourcecode>
+    <id>documentsplit</id>
+  </sample>
+  <sample>
+    <name>Document Time Stamp</name>
+    <description>The DocumentTimeStamp sample shows how to add a document level timestamp to a PDF file.</description>
+    <csharpsourcecode>documenttimestamp_cs.html</csharpsourcecode>
+    <vbnetsourcecode>documenttimestamp_vb.html</vbnetsourcecode>
+    <id>documenttimestamp</id>
+  </sample>
+  <sample>
+    <name>Encryption</name>
+    <description>The Encryption sample shows how to encrypt PDF files using RC4 and AES encrpytion and 40/128/256bit keys and how to load an encrypted file and open it using its password.</description>
+    <csharpsourcecode>encryption_cs.html</csharpsourcecode>
+    <vbnetsourcecode>encryption_vb.html</vbnetsourcecode>
+    <id>encryption</id>
+  </sample>
+  <sample>
+    <name>File attachments</name>
+    <description>The FileAttachments sample shows how to include attachments in a document and how to inspect attachments in an existing document.</description>
+    <csharpsourcecode>fileattachments_cs.html</csharpsourcecode>
+    <vbnetsourcecode>fileattachments_vb.html</vbnetsourcecode>
+    <id>fileattachments</id>
+  </sample>
+  <sample>
+    <name>Fonts</name>
+    <description>The Fonts sample shows how the fonts support in Xfinium.Pdf library. Base 14 fonts, CJK fonts, Ansi and Unicode TrueType fonts are shown.</description>
+    <csharpsourcecode>fonts_cs.html</csharpsourcecode>
+    <vbnetsourcecode>fonts_vb.html</vbnetsourcecode>
+    <id>fonts</id>
+  </sample>
+  <sample>
+    <name>Form fill</name>
+    <description>The FormFill sample shows how to read and write values in PDF forms. All PDF form fields are supported for reading/writting.</description>
+    <csharpsourcecode>formfill_cs.html</csharpsourcecode>
+    <vbnetsourcecode>formfill_vb.html</vbnetsourcecode>
+    <id>formfill</id>
+  </sample>
+  <sample>
+    <name>Form generator</name>
+    <description>The FormGenerator sample shows how to create PDF forms. Push buttons, text boxes, radio buttons, checkboxes, drop down lists, list boxes and signature fields are supported.</description>
+    <csharpsourcecode>formgenerator_cs.html</csharpsourcecode>
+    <vbnetsourcecode>formgenerator_vb.html</vbnetsourcecode>
+    <id>formgenerator</id>
+  </sample>
+  <sample>
+    <name>Formated content</name>
+    <description>The Formatted Content sample shows how to create PDF content with complex formatting features. Create paragraphs and text blocks, combine regular and styled text, insert links into text or create bullet lists.</description>
+    <csharpsourcecode>formattedcontent_cs.html</csharpsourcecode>
+    <vbnetsourcecode>formattedcontent_vb.html</vbnetsourcecode>
+    <id>formattedcontent</id>
+  </sample>
+  <sample>
+    <name>Grayscale conversion</name>
+    <description>The GrayscaleConversion sample shows how to transform the page colors to grayscale. This is one of the supported page transforms, the library also supports conversion to RGB or CMYK, image conversion to grayscale or image replacement and removal.</description>
+    <csharpsourcecode>grayscaleconversion_cs.html</csharpsourcecode>
+    <vbnetsourcecode>grayscaleconversion_vb.html</vbnetsourcecode>
+    <id>grayscaleconversion</id>
+  </sample>
+  <sample>
+    <name>Headers and footers</name>
+    <description>The HeadersAndFooters sample shows how to add headers and footers to a flow document.</description>
+    <csharpsourcecode>headersandfooters_cs.html</csharpsourcecode>
+    <vbnetsourcecode>headersandfooters_vb.html</vbnetsourcecode>
+    <id>headersandfooters</id>
+  </sample>
+  <sample>
+    <name>Images</name>
+    <description>The Images sample shows how to display images in a PDF file. The following features are shown: display the same image at different sizes, flip image content, soft masks and stencil masks.</description>
+    <csharpsourcecode>images_cs.html</csharpsourcecode>
+    <vbnetsourcecode>images_vb.html</vbnetsourcecode>
+    <id>images</id>
+  </sample>
+  <sample>
+    <name>Invoice</name>
+    <description>The Invoice sample shows how to create a complex document, an invoice, using the FlowDocument API. It combines text, images and tables to generate a nice invoice.</description>
+    <csharpsourcecode>invoice_cs.html</csharpsourcecode>
+    <vbnetsourcecode>invoice_vb.html</vbnetsourcecode>
+    <id>invoice</id>
+  </sample>
+  <sample>
+    <name>Measurements</name>
+    <description>The Measurements sample shows how to add spatial features to your PDF files. The sample creates a viewport on the PDF page and sets its scale to "1 in = 1 mi" so that all measurements performed inside the viewport are displayed in miles.</description>
+    <csharpsourcecode>measurements_cs.html</csharpsourcecode>
+    <vbnetsourcecode>measurements_vb.html</vbnetsourcecode>
+    <id>measurements</id>
+  </sample>
+  <sample>
+    <name>Optional content</name>
+    <description>The OptionalContent sample shows how to create optional content (also known as layers) in a PDF file. The sample shows basic optional content on a single page, imbricated optional content and multipage optional content.</description>
+    <csharpsourcecode>optionalcontent_cs.html</csharpsourcecode>
+    <vbnetsourcecode>optionalcontent_vb.html</vbnetsourcecode>
+    <id>optionalcontent</id>
+  </sample>
+  <sample>
+    <name>Optional content extraction</name>
+    <description>The OptionalContentExtraction sample shows how to extract optional content groups from a PDF page. The optional content is extracted as a form XObject that can be drawn later on another page graphics.</description>
+    <csharpsourcecode>optionalcontentextraction_cs.html</csharpsourcecode>
+    <vbnetsourcecode>optionalcontentextraction_vb.html</vbnetsourcecode>
+    <id>optionalcontentextraction</id>
+  </sample>
+  <sample>
+    <name>Outlines</name>
+    <description>The Outlines sample shows how to create a table of contents for a document with outlines that point to PDF page or execute various actions.</description>
+    <csharpsourcecode>outlines_cs.html</csharpsourcecode>
+    <vbnetsourcecode>outlines_vb.html</vbnetsourcecode>
+    <id>outlines</id>
+  </sample>
+  <sample>
+    <name>PAdES Signature</name>
+    <description>The PAdESSignature sample shows how to sign a PDF file with a PAdES signature.</description>
+    <csharpsourcecode>padessignature_cs.html</csharpsourcecode>
+    <vbnetsourcecode>padessignature_vb.html</vbnetsourcecode>
+    <id>padessignature</id>
+  </sample>
+  <sample>
+    <name>Page imposition</name>
+    <description>The PageImposition sample shows how to extract page content from a source file and draw it on a single new page. The drawn content can be moved, scaled and rotated.</description>
+    <csharpsourcecode>pageimposition_cs.html</csharpsourcecode>
+    <vbnetsourcecode>pageimposition_vb.html</vbnetsourcecode>
+    <id>pageimposition</id>
+  </sample>
+  <sample>
+    <name>Page objects</name>
+    <description>The PageObjects sample shows how to extract page content as discreet graphic objects. Path objects for vector graphics, text and image objects are supported. The sample draws a bounding rectangle around each object.</description>
+    <csharpsourcecode>pageobjects_cs.html</csharpsourcecode>
+    <vbnetsourcecode>pageobjects_vb.html</vbnetsourcecode>
+    <id>pageobjects</id>
+  </sample>
+  <sample>
+    <name>PDF/A</name>
+    <description>The PDF/A sample shows how PDF/A documents can be created using XFINIUM.PDF library.</description>
+    <csharpsourcecode>pdfa_cs.html</csharpsourcecode>
+    <vbnetsourcecode>pdfa_vb.html</vbnetsourcecode>
+    <id>pdfa</id>
+  </sample>
+  <sample>
+    <name>Portfolios</name>
+    <description>The Portfolios sample shows how to create PDF portfolios from various files. Building a folders hierarchy and custom attributes definition are shown in the sample.</description>
+    <csharpsourcecode>portfolios_cs.html</csharpsourcecode>
+    <vbnetsourcecode>portfolios_vb.html</vbnetsourcecode>
+    <id>portfolios</id>
+  </sample>
+  <sample>
+    <name>Redaction</name>
+    <description>The Redaction sample shows how to redact sensitive information from PDF files using Xfinium.Pdf library. Both text and image redaction are supported.</description>
+    <csharpsourcecode>redaction_cs.html</csharpsourcecode>
+    <vbnetsourcecode>redaction_vb.html</vbnetsourcecode>
+    <id>redaction</id>
+  </sample>
+  <sample>
+    <name>Remove and replace images</name>
+    <description>The RemoveReplaceImages sample shows how to remove and/or replace images on a PDF page. It uses the "Replace Images" page transform.</description>
+    <csharpsourcecode>removereplaceimages_cs.html</csharpsourcecode>
+    <vbnetsourcecode>removereplaceimages_vb.html</vbnetsourcecode>
+    <id>removereplaceimages</id>
+  </sample>
+  <sample>
+    <name>Search Text</name>
+    <description>The SearchText sample shows how to search text in PDF pages. Case sensitive, whole words and regex searches are supported.</description>
+    <csharpsourcecode>searchtext_cs.html</csharpsourcecode>
+    <vbnetsourcecode>searchtext_vb.html</vbnetsourcecode>
+    <id>searchtext</id>
+  </sample>
+  <sample>
+    <name>Signature With TimeStamp</name>
+    <description>The SignatureWithTimeStamp sample shows how to sign a PDF file with and include a timestamp in the signature.</description>
+    <csharpsourcecode>signaturewithtimestamp_cs.html</csharpsourcecode>
+    <vbnetsourcecode>signaturewithtimestamp_vb.html</vbnetsourcecode>
+    <id>signaturewithtimestamp</id>
+  </sample>
+  <sample>
+    <name>Simple Signature</name>
+    <description>The SimpleSignature sample shows how to sign a PDF file with a standard CMS signature.</description>
+    <csharpsourcecode>simplesignature_cs.html</csharpsourcecode>
+    <vbnetsourcecode>simplesignature_vb.html</vbnetsourcecode>
+    <id>simplesignature</id>
+  </sample>
+  <sample>
+    <name>Simple table</name>
+    <description>The  sample shows how to create a simple table using the FlowDocument API.</description>
+    <csharpsourcecode>simpletable_cs.html</csharpsourcecode>
+    <vbnetsourcecode>simpletable_vb.html</vbnetsourcecode>
+    <id>simpletable</id>
+  </sample>
+  <sample>
+    <name>Superscript and subscript</name>
+    <description>The  sample shows how to draw superscript and subscript text with formatted content and flow document API.</description>
+    <csharpsourcecode>superscriptsubscript_cs.html</csharpsourcecode>
+    <vbnetsourcecode>superscriptsubscript_vb.html</vbnetsourcecode>
+    <id>superscriptsubscript</id>
+  </sample>
+  <sample>
+    <name>SVG to PDF</name>
+    <description>The Text sample shows how to draw SVG images on PDF pages.</description>
+    <csharpsourcecode>svgtopdf_cs.html</csharpsourcecode>
+    <vbnetsourcecode>svgtopdf_vb.html</vbnetsourcecode>
+    <id>svgtopdf</id>
+  </sample>
+  <sample>
+    <name>Table cell spans</name>
+    <description>The  sample shows how to create a table with cell spans using the FlowDocument API.</description>
+    <csharpsourcecode>tablecellspans_cs.html</csharpsourcecode>
+    <vbnetsourcecode>tablecellspans_vb.html</vbnetsourcecode>
+    <id>tablecellspans</id>
+  </sample>
+  <sample>
+    <name>Table groups</name>
+    <description>The  sample shows how to create a table with groups using the FlowDocument API.</description>
+    <csharpsourcecode>tablegroups_cs.html</csharpsourcecode>
+    <vbnetsourcecode>tablegroups_vb.html</vbnetsourcecode>
+    <id>tablegroups</id>
+  </sample>
+  <sample>
+    <name>Table of Contents</name>
+    <description>The sample shows how generate automatically the table of contents for a flow PDF document.</description>
+    <csharpsourcecode>tableofcontents_cs.html</csharpsourcecode>
+    <vbnetsourcecode>tableofcontents_vb.html</vbnetsourcecode>
+    <id>tableofcontents</id>
+  </sample>
+  <sample>
+    <name>Text</name>
+    <description>The Text sample shows the text drawing capabilities included in Xfinium.Pdf. Basic text drawing, aligment options, rotation and text wrapping are demonstrated.</description>
+    <csharpsourcecode>text_cs.html</csharpsourcecode>
+    <vbnetsourcecode>text_vb.html</vbnetsourcecode>
+    <id>text</id>
+  </sample>
+  <sample>
+    <name>Tiff to Pdf</name>
+    <description>The TiffToPdf sample shows how to convert a multiframe TIFF image to a PDF file. The conversion consists in drawing each TIFF frame on a new PDF page.</description>
+    <csharpsourcecode>tifftopdf_cs.html</csharpsourcecode>
+    <vbnetsourcecode>tifftopdf_vb.html</vbnetsourcecode>
+    <id>tifftopdf</id>
+  </sample>
+  <sample>
+    <name>Type3 fonts</name>
+    <description>The Type3 fonts sample how to create a Type3 font, define its glyphs and then draw text using the new font.</description>
+    <csharpsourcecode>type3fonts_cs.html</csharpsourcecode>
+    <vbnetsourcecode>type3fonts_vb.html</vbnetsourcecode>
+    <id>type3fonts</id>
+  </sample>
+  <sample>
+    <name>Vector graphics</name>
+    <description>The VectorGraphics sample shows the vector drawing capabilities included in Xfinium.Pdf library. Lines, rectangles, rounded rectangles, ellipses, bezier curves, arcs, pies are shown. Outlines can be stroked and interiors can be filled with any PDF color, from DeviceGray to DeviceN. Form XObjects, reusable pieces of vector graphics are also demonstrated.</description>
+    <csharpsourcecode>vectorgraphics_cs.html</csharpsourcecode>
+    <vbnetsourcecode>vectorgraphics_vb.html</vbnetsourcecode>
+    <id>vectorgraphics</id>
+  </sample>
+  <sample>
+    <name>Watermarks</name>
+    <description>The Watermarks sample shows how add watermarks to an existing PDF file. Watermarks can be drawn under existing page content or on top of page content using transparency or different blend modes in order not to block the page content.</description>
+    <csharpsourcecode>watermarks_cs.html</csharpsourcecode>
+    <vbnetsourcecode>watermarks_vb.html</vbnetsourcecode>
+    <id>watermarks</id>
+  </sample>
+</samples>

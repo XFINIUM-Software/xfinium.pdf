@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>.\Portfolios.vb</title>
+<style type="text/css">
+body.hl	{ background-color:#ffffff; }
+pre.hl	{ color:#000000; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;}
+.hl.num { color:#000000; }
+.hl.esc { color:#a31515; }
+.hl.str { color:#a31515; }
+.hl.pps { color:#0000ff; }
+.hl.slc { color:#008000; }
+.hl.com { color:#008000; }
+.hl.ppc { color:#0000ff; }
+.hl.opt { color:#000000; }
+.hl.ipl { color:#a31515; }
+.hl.lin { color:#2b91af; }
+.hl.kwa { color:#0000ff; }
+.hl.kwb { color:#0000ff; }
+.hl.kwc { color:#2b91af; }
+.hl.kwd { color:#000000; }
+</style>
+</head>
+<body class="hl">
+<pre class="hl">Imports System<span class="hl opt">.</span>IO
+Imports Xfinium<span class="hl opt">.</span>Pdf
+Imports Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Graphics
+Imports Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Portfolios
+Imports Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Core<span class="hl opt">.</span>Cos
+
+Namespace Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Samples
+	<span class="hl slc">''' &lt;summary&gt;</span>
+	<span class="hl slc">''' Portfolios sample.</span>
+	<span class="hl slc">''' &lt;/summary&gt;</span>
+	<span class="hl kwa">Public</span> Class Portfolios
+		<span class="hl slc">''' &lt;summary&gt;</span>
+		<span class="hl slc">''' Main method for running the sample.</span>
+		<span class="hl slc">''' &lt;/summary&gt;</span>
+		<span class="hl slc">''' &lt;param name=&quot;imageStream&quot;&gt;&lt;/param&gt;</span>
+		<span class="hl slc">''' &lt;param name=&quot;pdfStream&quot;&gt;&lt;/param&gt;</span>
+		<span class="hl slc">''' &lt;param name=&quot;csStream&quot;&gt;&lt;/param&gt;</span>
+		<span class="hl slc">''' &lt;param name=&quot;vbStream&quot;&gt;&lt;/param&gt;</span>
+		<span class="hl kwa">Public</span> Shared <span class="hl kwa">Function</span> <span class="hl kwd">Run</span><span class="hl opt">(</span>imageStream <span class="hl kwa">As</span> Stream<span class="hl opt">,</span> pdfStream <span class="hl kwa">As</span> Stream<span class="hl opt">,</span> csStream <span class="hl kwa">As</span> Stream<span class="hl opt">,</span> vbStream <span class="hl kwa">As</span> Stream<span class="hl opt">)</span> <span class="hl kwa">As</span> <span class="hl kwd">SampleOutputInfo</span><span class="hl opt">()</span>
+			<span class="hl kwa">Dim</span> portfolio <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolio</span><span class="hl opt">()</span>
+
+			<span class="hl slc">' Build the structure that describes how to files and folders in the portfolio are presented to the user.</span>
+			<span class="hl kwa">Dim</span> portfolioAttributeDefinitions <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioAttributeDefinitions</span><span class="hl opt">()</span>
+			<span class="hl kwa">Dim</span> nameAttribute <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioAttributeDefinition</span><span class="hl opt">()</span>
+			nameAttribute<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;Name&quot;</span>
+			nameAttribute<span class="hl opt">.</span><span class="hl kwa">Type</span> <span class="hl opt">=</span> PdfPortfolioAttributeDefinitionType<span class="hl opt">.[</span><span class="hl kwb">String</span><span class="hl opt">]</span>
+			<span class="hl kwd">portfolioAttributeDefinitions</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> nameAttribute
+			<span class="hl kwa">Dim</span> typeAttribute <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioAttributeDefinition</span><span class="hl opt">()</span>
+			typeAttribute<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;Type&quot;</span>
+			typeAttribute<span class="hl opt">.</span><span class="hl kwa">Type</span> <span class="hl opt">=</span> PdfPortfolioAttributeDefinitionType<span class="hl opt">.[</span><span class="hl kwb">String</span><span class="hl opt">]</span>
+			<span class="hl kwd">portfolioAttributeDefinitions</span><span class="hl opt">(</span><span class="hl str">&quot;type&quot;</span><span class="hl opt">) =</span> typeAttribute
+
+			portfolio<span class="hl opt">.</span>AttributeDefinitions <span class="hl opt">=</span> portfolioAttributeDefinitions
+
+			<span class="hl slc">' Setup the folders structure</span>
+			<span class="hl kwa">Dim</span> root <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioFolder</span><span class="hl opt">()</span>
+			root<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;All files&quot;</span>
+			root<span class="hl opt">.</span>PortfolioAttributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			root<span class="hl opt">.</span><span class="hl kwd">PortfolioAttributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;All files&quot;</span><span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> imagesFolder <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioFolder</span><span class="hl opt">()</span>
+			imagesFolder<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;Images&quot;</span>
+			imagesFolder<span class="hl opt">.</span>PortfolioAttributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			imagesFolder<span class="hl opt">.</span><span class="hl kwd">PortfolioAttributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;Images (1)&quot;</span><span class="hl opt">)</span>
+			root<span class="hl opt">.</span>Folders<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>imagesFolder<span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> pdfFolder <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioFolder</span><span class="hl opt">()</span>
+			pdfFolder<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;PDFs&quot;</span>
+			pdfFolder<span class="hl opt">.</span>PortfolioAttributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			pdfFolder<span class="hl opt">.</span><span class="hl kwd">PortfolioAttributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;PDFs (1)&quot;</span><span class="hl opt">)</span>
+			root<span class="hl opt">.</span>Folders<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>pdfFolder<span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> htmlFolder <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioFolder</span><span class="hl opt">()</span>
+			htmlFolder<span class="hl opt">.</span>Name <span class="hl opt">=</span> <span class="hl str">&quot;HTML&quot;</span>
+			htmlFolder<span class="hl opt">.</span>PortfolioAttributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			htmlFolder<span class="hl opt">.</span><span class="hl kwd">PortfolioAttributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;HTML (2)&quot;</span><span class="hl opt">)</span>
+			root<span class="hl opt">.</span>Folders<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>htmlFolder<span class="hl opt">)</span>
+
+			portfolio<span class="hl opt">.</span>Folders<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>root<span class="hl opt">)</span>
+
+			<span class="hl slc">' Setup the portfolio items</span>
+			<span class="hl kwa">Dim</span> imageFile <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioItem</span><span class="hl opt">()</span>
+			imageFile<span class="hl opt">.</span>Folder <span class="hl opt">=</span> imagesFolder
+			<span class="hl kwa">Dim</span> data <span class="hl kwa">As</span> <span class="hl kwb">Byte</span><span class="hl opt">() =</span> <span class="hl kwa">New</span> <span class="hl kwb">Byte</span><span class="hl opt">(</span>imageStream<span class="hl opt">.</span>Length <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">) {}</span>
+			imageStream<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> data<span class="hl opt">.</span>Length<span class="hl opt">)</span>
+			imageFile<span class="hl opt">.</span>Payload <span class="hl opt">=</span> data
+			imageFile<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;image.jpg&quot;</span>
+			imageFile<span class="hl opt">.</span>Attributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			imageFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;image.jpg&quot;</span><span class="hl opt">)</span>
+			imageFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;type&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;JPEG image&quot;</span><span class="hl opt">)</span>
+			portfolio<span class="hl opt">.</span>Items<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>imageFile<span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> pdfFile <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioItem</span><span class="hl opt">()</span>
+			pdfFile<span class="hl opt">.</span>Folder <span class="hl opt">=</span> pdfFolder
+			data <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwb">Byte</span><span class="hl opt">(</span>pdfStream<span class="hl opt">.</span>Length <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">) {}</span>
+			pdfStream<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> data<span class="hl opt">.</span>Length<span class="hl opt">)</span>
+			pdfFile<span class="hl opt">.</span>Payload <span class="hl opt">=</span> data
+			pdfFile<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;content.pdf&quot;</span>
+			pdfFile<span class="hl opt">.</span>Attributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			pdfFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;content.pdf&quot;</span><span class="hl opt">)</span>
+			pdfFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;type&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;PDF file&quot;</span><span class="hl opt">)</span>
+			portfolio<span class="hl opt">.</span>Items<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>pdfFile<span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> csFile <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioItem</span><span class="hl opt">()</span>
+			csFile<span class="hl opt">.</span>Folder <span class="hl opt">=</span> htmlFolder
+			data <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwb">Byte</span><span class="hl opt">(</span>csStream<span class="hl opt">.</span>Length <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">) {}</span>
+			csStream<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> data<span class="hl opt">.</span>Length<span class="hl opt">)</span>
+			csFile<span class="hl opt">.</span>Payload <span class="hl opt">=</span> data
+			csFile<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;portfolios.cs.html&quot;</span>
+			csFile<span class="hl opt">.</span>Attributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			csFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;portfolios.cs.html&quot;</span><span class="hl opt">)</span>
+			csFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;type&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;HTML file&quot;</span><span class="hl opt">)</span>
+			portfolio<span class="hl opt">.</span>Items<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>csFile<span class="hl opt">)</span>
+
+			<span class="hl kwa">Dim</span> vbFile <span class="hl kwa">As New</span> <span class="hl kwd">PdfPortfolioItem</span><span class="hl opt">()</span>
+			vbFile<span class="hl opt">.</span>Folder <span class="hl opt">=</span> htmlFolder
+			data <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwb">Byte</span><span class="hl opt">(</span>vbStream<span class="hl opt">.</span>Length <span class="hl opt">-</span> <span class="hl num">1</span><span class="hl opt">) {}</span>
+			vbStream<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>data<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> data<span class="hl opt">.</span>Length<span class="hl opt">)</span>
+			vbFile<span class="hl opt">.</span>Payload <span class="hl opt">=</span> data
+			vbFile<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;portfolios.vb.html&quot;</span>
+			vbFile<span class="hl opt">.</span>Attributes <span class="hl opt">=</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfPortfolioItemAttributes</span><span class="hl opt">()</span>
+			vbFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;name&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;portfolios.vb.html&quot;</span><span class="hl opt">)</span>
+			vbFile<span class="hl opt">.</span><span class="hl kwd">Attributes</span><span class="hl opt">(</span><span class="hl str">&quot;type&quot;</span><span class="hl opt">) =</span> <span class="hl kwa">New</span> <span class="hl kwd">PdfCosString</span><span class="hl opt">(</span><span class="hl str">&quot;HTML file&quot;</span><span class="hl opt">)</span>
+			portfolio<span class="hl opt">.</span>Items<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>vbFile<span class="hl opt">)</span>
+
+			portfolio<span class="hl opt">.</span>StartupDocument <span class="hl opt">=</span> pdfFile
+
+			<span class="hl kwa">Dim</span> output <span class="hl kwa">As</span> <span class="hl kwd">SampleOutputInfo</span><span class="hl opt">() =</span> <span class="hl kwa">New</span> <span class="hl kwd">SampleOutputInfo</span><span class="hl opt">() {</span><span class="hl kwa">New</span> <span class="hl kwd">SampleOutputInfo</span><span class="hl opt">(</span>portfolio<span class="hl opt">,</span> <span class="hl str">&quot;xfinium.pdf.sample.portfolios.pdf&quot;</span><span class="hl opt">)}</span>
+			<span class="hl kwa">Return</span> output
+		<span class="hl kwa">End Function</span>
+	<span class="hl kwa">End</span> Class
+<span class="hl kwa">End</span> Namespace
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.12, http://www.andre-simon.de/-->

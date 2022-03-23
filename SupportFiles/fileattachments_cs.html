@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>.\FileAttachments.cs</title>
+<style type="text/css">
+body.hl	{ background-color:#ffffff; }
+pre.hl	{ color:#000000; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;}
+.hl.num { color:#000000; }
+.hl.esc { color:#a31515; }
+.hl.str { color:#a31515; }
+.hl.pps { color:#0000ff; }
+.hl.slc { color:#008000; }
+.hl.com { color:#008000; }
+.hl.ppc { color:#0000ff; }
+.hl.opt { color:#000000; }
+.hl.ipl { color:#a31515; }
+.hl.lin { color:#2b91af; }
+.hl.kwa { color:#0000ff; }
+.hl.kwb { color:#0000ff; }
+.hl.kwc { color:#2b91af; }
+.hl.kwd { color:#000000; }
+</style>
+</head>
+<body class="hl">
+<pre class="hl"><span class="hl kwa">using</span> System<span class="hl opt">;</span>
+<span class="hl kwa">using</span> System<span class="hl opt">.</span>IO<span class="hl opt">;</span>
+<span class="hl kwa">using</span> Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">;</span>
+<span class="hl kwa">using</span> Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Graphics<span class="hl opt">;</span>
+
+<span class="hl kwa">namespace</span> Xfinium<span class="hl opt">.</span>Pdf<span class="hl opt">.</span>Samples
+<span class="hl opt">{</span>
+    <span class="hl slc">/// &lt;summary&gt;</span>
+    <span class="hl slc">/// FileAttachments sample.</span>
+    <span class="hl slc">/// &lt;/summary&gt;</span>
+    <span class="hl kwa">public class</span> FileAttachments
+    <span class="hl opt">{</span>
+        <span class="hl slc">/// &lt;summary&gt;</span>
+        <span class="hl slc">/// Main method for running the sample.</span>
+        <span class="hl slc">/// &lt;/summary&gt;</span>
+        <span class="hl kwa">public static</span> SampleOutputInfo<span class="hl opt">[]</span> <span class="hl kwd">Run</span><span class="hl opt">(</span>Stream s1<span class="hl opt">,</span> Stream s2<span class="hl opt">)</span>
+        <span class="hl opt">{</span>
+            PdfFixedDocument document <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwd">PdfFixedDocument</span><span class="hl opt">();</span>
+            document<span class="hl opt">.</span>DisplayMode <span class="hl opt">=</span> PdfDisplayMode<span class="hl opt">.</span>UseAttachments<span class="hl opt">;</span>
+
+            PdfStandardFont helvetica <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwd">PdfStandardFont</span><span class="hl opt">(</span>PdfStandardFontFace<span class="hl opt">.</span>Helvetica<span class="hl opt">,</span> <span class="hl num">16</span><span class="hl opt">);</span>
+            PdfBrush blackBrush <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwd">PdfBrush</span><span class="hl opt">();</span>
+            PdfPage page <span class="hl opt">=</span> document<span class="hl opt">.</span>Pages<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">();</span>
+            page<span class="hl opt">.</span>Graphics<span class="hl opt">.</span><span class="hl kwd">DrawString</span><span class="hl opt">(</span><span class="hl str">&quot;This document contains 2 file attachments:&quot;</span><span class="hl opt">,</span> helvetica<span class="hl opt">,</span> blackBrush<span class="hl opt">,</span> <span class="hl num">50</span><span class="hl opt">,</span> <span class="hl num">50</span><span class="hl opt">);</span>
+            page<span class="hl opt">.</span>Graphics<span class="hl opt">.</span><span class="hl kwd">DrawString</span><span class="hl opt">(</span><span class="hl str">&quot;1. fileattachments.cs.html&quot;</span><span class="hl opt">,</span> helvetica<span class="hl opt">,</span> blackBrush<span class="hl opt">,</span> <span class="hl num">50</span><span class="hl opt">,</span> <span class="hl num">70</span><span class="hl opt">);</span>
+            page<span class="hl opt">.</span>Graphics<span class="hl opt">.</span><span class="hl kwd">DrawString</span><span class="hl opt">(</span><span class="hl str">&quot;2. fileattachments.vb.html&quot;</span><span class="hl opt">,</span> helvetica<span class="hl opt">,</span> blackBrush<span class="hl opt">,</span> <span class="hl num">50</span><span class="hl opt">,</span> <span class="hl num">90</span><span class="hl opt">);</span>
+
+            <span class="hl kwb">byte</span><span class="hl opt">[]</span> fileData1 <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwb">byte</span><span class="hl opt">[</span>s1<span class="hl opt">.</span>Length<span class="hl opt">];</span>
+            s1<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>fileData1<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> fileData1<span class="hl opt">.</span>Length<span class="hl opt">);</span>
+            PdfDocumentFileAttachment fileAttachment1 <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwd">PdfDocumentFileAttachment</span><span class="hl opt">();</span>
+            fileAttachment1<span class="hl opt">.</span>Payload <span class="hl opt">=</span> fileData1<span class="hl opt">;</span>
+            fileAttachment1<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;fileattachments.cs.html&quot;</span><span class="hl opt">;</span>
+            fileAttachment1<span class="hl opt">.</span>Description <span class="hl opt">=</span> <span class="hl str">&quot;C# Source Code for FileAttachments sample&quot;</span><span class="hl opt">;</span>
+            document<span class="hl opt">.</span>FileAttachments<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>fileAttachment1<span class="hl opt">);</span>
+
+            <span class="hl kwb">byte</span><span class="hl opt">[]</span> fileData2 <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwb">byte</span><span class="hl opt">[</span>s2<span class="hl opt">.</span>Length<span class="hl opt">];</span>
+            s2<span class="hl opt">.</span><span class="hl kwd">Read</span><span class="hl opt">(</span>fileData2<span class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">,</span> fileData2<span class="hl opt">.</span>Length<span class="hl opt">);</span>
+            PdfDocumentFileAttachment fileAttachment2 <span class="hl opt">=</span> <span class="hl kwa">new</span> <span class="hl kwd">PdfDocumentFileAttachment</span><span class="hl opt">();</span>
+            fileAttachment2<span class="hl opt">.</span>Payload <span class="hl opt">=</span> fileData1<span class="hl opt">;</span>
+            fileAttachment2<span class="hl opt">.</span>FileName <span class="hl opt">=</span> <span class="hl str">&quot;fileattachments.vb.html&quot;</span><span class="hl opt">;</span>
+            fileAttachment2<span class="hl opt">.</span>Description <span class="hl opt">=</span> <span class="hl str">&quot;VB.NET Source Code for FileAttachments sample&quot;</span><span class="hl opt">;</span>
+            document<span class="hl opt">.</span>FileAttachments<span class="hl opt">.</span><span class="hl kwd">Add</span><span class="hl opt">(</span>fileAttachment2<span class="hl opt">);</span>
+
+            SampleOutputInfo<span class="hl opt">[]</span> output <span class="hl opt">=</span> <span class="hl kwa">new</span> SampleOutputInfo<span class="hl opt">[] {</span> <span class="hl kwa">new</span> <span class="hl kwd">SampleOutputInfo</span><span class="hl opt">(</span>document<span class="hl opt">,</span> <span class="hl str">&quot;xfinium.pdf.sample.fileattachments.pdf&quot;</span><span class="hl opt">) };</span>
+            <span class="hl kwa">return</span> output<span class="hl opt">;</span>
+        <span class="hl opt">}</span>
+    <span class="hl opt">}</span>
+<span class="hl opt">}</span>
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.12, http://www.andre-simon.de/-->

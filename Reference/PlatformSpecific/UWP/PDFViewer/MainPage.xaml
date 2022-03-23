@@ -1,0 +1,34 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PDFViewer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xfs="using:Xfinium.Pdf.View"
+    x:Class="PDFViewer.MainPage"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CommandBar Grid.Row="0">
+            <AppBarButton Icon="OpenFile" Label="Open" Click="btnBrowse_Click" />
+            <AppBarButton Icon="Save" Label="Save" Click="btnSaveClick_Click" />
+            <AppBarSeparator/>
+            <AppBarToggleButton x:Name="btnFitWidth" Label="Fit Width"  ToolTipService.ToolTip="Set ZoomMode to FitWidth" Click="btnFitWidth_Click">
+                <AppBarToggleButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/FitWidth.png" />
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+            <AppBarToggleButton x:Name="btnFitWidthOnDoubleClick" Label="Fit Width on Double Click" ToolTipService.ToolTip="Scroll the page to top and set ZoomMode to FitWidth" Click="btnFitWidthOnDoubleClick_Click">
+                <AppBarToggleButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/FitWidthOnDoubleClick.png" />
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+        </CommandBar>
+        <ScrollViewer x:Name="scroller" Grid.Row="1"  Margin="10,10,10,10" HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Auto" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" BorderBrush="Black" BorderThickness="1">
+            <xfs:PdfCoreView x:Name="viewer" Background="LightGray" Scroller="{x:Bind scroller}" Zoom="100" />
+        </ScrollViewer>
+    </Grid>
+</Page>
