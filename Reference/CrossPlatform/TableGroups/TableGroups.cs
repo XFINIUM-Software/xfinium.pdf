@@ -26,8 +26,8 @@ namespace Xfinium.Pdf.Samples
             PdfFlowContent header = BuildHeader(verdanaBold);
             document.AddContent(header);
 
-            PdfFlowContent countriesSection = BuildCountriesList(verdana, verdanaBold, data);
-            document.AddContent(countriesSection);
+            PdfFlowContent attendantsSection = BuildCountriesList(verdana, verdanaBold, data);
+            document.AddContent(attendantsSection);
 
             SampleOutputInfo[] output = new SampleOutputInfo[] { new SampleOutputInfo(document, "xfinium.pdf.sample.tablegroups.pdf") };
             return output;
@@ -58,18 +58,11 @@ namespace Xfinium.Pdf.Samples
 
             PdfFlowTableContent countriesTable = new PdfFlowTableContent(2);
             countriesTable.Border = new PdfPen(PdfRgbColor.Black, 0.5);
-            countriesTable.MinRowHeight = 16;
+            countriesTable.MinRowHeight = 15;
             (countriesTable.DefaultCell as PdfFlowTableStringCell).Font = textFont;
             countriesTable.Columns[0].VerticalAlign = PdfGraphicAlign.Center;
             countriesTable.Columns[1].VerticalAlign = PdfGraphicAlign.Center;
             countriesTable.Columns[1].HorizontalAlign = PdfGraphicAlign.Far;
-
-            PdfFlowTableRow headerRow = countriesTable.HeaderRows.AddRowWithCells("Country", "Population");
-            headerRow.Background = new PdfBrush(PdfRgbColor.LightGray);
-            headerRow.Cells[0].HorizontalAlign = PdfGraphicAlign.Center;
-            (headerRow.Cells[0] as PdfFlowTableStringCell).Font = headerFont;
-            headerRow.Cells[1].HorizontalAlign = PdfGraphicAlign.Center;
-            (headerRow.Cells[1] as PdfFlowTableStringCell).Font = headerFont;
 
             string continent = "";
             long total = 0;

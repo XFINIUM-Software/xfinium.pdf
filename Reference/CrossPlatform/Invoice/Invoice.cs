@@ -22,18 +22,7 @@ namespace Xfinium.Pdf.Samples
             PdfAnsiTrueTypeFont verdanaBold = new PdfAnsiTrueTypeFont(verdanaBoldFontStream, 10, true);
             PdfPngImage logoImage = new PdfPngImage(logoImageStream);
 
-            PdfFlowDocumentDefaults fdd = new PdfFlowDocumentDefaults();
-            // Automatically tag content for accessibility.
-            fdd.EnableAutomaticTagging = true;
-            PdfFlowDocument document = new PdfFlowDocument(fdd);
-            document.Language = "en-US";
-            document.ViewerPreferences = new PdfViewerPreferences();
-            document.ViewerPreferences.DisplayDocumentTitle = true;
-
-            document.DocumentInformation = new PdfDocumentInformation();
-            document.DocumentInformation.Title = "Invoice Demo with Structured Tagged PDF content";
-
-            document.XmpMetadata = new PdfXmpMetadata();
+            PdfFlowDocument document = new PdfFlowDocument();
 
             PdfFlowContent header = BuildHeader(verdana, logoImage);
             document.AddContent(header);
@@ -74,14 +63,6 @@ namespace Xfinium.Pdf.Samples
 
         private static PdfFlowContent BuildSellerSection(PdfAnsiTrueTypeFont verdana, PdfAnsiTrueTypeFont verdanaBold)
         {
-            PdfFlowTableContent sellerTable = new PdfFlowTableContent(2);
-
-            PdfCode39Barcode c39 = new PdfCode39Barcode("1234567890");
-            c39.BarcodeTextPosition = PdfBarcodeTextPosition.None;
-            PdfFormXObject xo = new PdfFormXObject(c39.Width, c39.Height);
-            xo.Graphics.DrawBarcode(c39, 0, 0);
-            PdfFlowFormXObjectContent flowXO = new PdfFlowFormXObjectContent(xo);
-
             PdfAnsiTrueTypeFont labelFont = new PdfAnsiTrueTypeFont(verdanaBold);
             labelFont.Size = 12;
             PdfAnsiTrueTypeFont contentFont = new PdfAnsiTrueTypeFont(verdana);
@@ -121,8 +102,7 @@ namespace Xfinium.Pdf.Samples
             }
             PdfFlowTextContent sellerInfoText = new PdfFlowTextContent(sellerInfo);
 
-            sellerTable.Rows.AddRowWithCells(flowXO, sellerInfoText);
-            return sellerTable;
+            return sellerInfoText;
         }
 
         private static PdfFlowContent BuildInvoiceInfoSection(PdfAnsiTrueTypeFont verdana, PdfAnsiTrueTypeFont verdanaBold)

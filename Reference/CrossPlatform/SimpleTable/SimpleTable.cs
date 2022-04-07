@@ -84,14 +84,14 @@ namespace Xfinium.Pdf.Samples
             attendantsTable.Columns[4].Width = 130;
             attendantsTable.Columns[4].WidthIsRelativeToTable = false;
 
-            PdfFlowTableRow headerRow = attendantsTable.HeaderRows.AddRowWithCells("Name", "Email", "Phone", "Company", "Country");
-            for (int i = 0; i < headerRow.Cells.Count; i++)
+            PdfFlowTableRow row = attendantsTable.Rows.AddRowWithCells("Name", "Email", "Phone", "Company", "Country");
+            for (int i = 0; i < row.Cells.Count; i++)
             {
-                (headerRow.Cells[i] as PdfFlowTableStringCell).Font = headerFont;
-                (headerRow.Cells[i] as PdfFlowTableStringCell).Color = new PdfBrush(PdfRgbColor.White);
-                headerRow.Cells[i].HorizontalAlign = PdfGraphicAlign.Center;
+                (row.Cells[i] as PdfFlowTableStringCell).Font = headerFont;
+                (row.Cells[i] as PdfFlowTableStringCell).Color = new PdfBrush(PdfRgbColor.White);
+                row.Cells[i].HorizontalAlign = PdfGraphicAlign.Center;
             }
-            headerRow.Background = new PdfBrush(PdfRgbColor.Black);
+            row.Background = new PdfBrush(PdfRgbColor.Black);
 
             int counter = 0;
             PdfBrush alternateBackground = new PdfBrush(PdfRgbColor.LightGray);
@@ -101,7 +101,7 @@ namespace Xfinium.Pdf.Samples
             {
                 string[] items = line.Split('|');
 
-                PdfFlowTableRow row = attendantsTable.Rows.AddRowWithCells(items);
+                row = attendantsTable.Rows.AddRowWithCells(items);
                 line = sr.ReadLine();
 
                 if (counter % 2 == 0)
