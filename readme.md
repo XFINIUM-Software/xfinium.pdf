@@ -6,7 +6,7 @@ The complete list of features is available below.
 If you are looking a feature that is not listed, feel free to  [contact us](https://xfiniumpdf.com/xfinium-pdf-contact-us.html)  and we'll help.
 
 **SUPPORTED PLATFORMS**
-- .NET 4.x
+- .NET Framework 4.x
 - Windows Forms
 - Xamarin.Mac
 - ASP.NET Webforms and MVC
@@ -42,6 +42,7 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Add and remove PDF pages
 - Page boxes - media box, crop box, art box, trim box and bleed box
 - Page labeling ranges (page numbering)
+- Page user units
 - Extract pages from external PDF files
 - Append PDF pages
 - Fast PDF merging
@@ -239,13 +240,12 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 
 **PDF RENDERING (Viewer Edition Only)**
 - Render PDF pages to images: RAW, BMP, GIF, JPG, PNG and TIFF
-- ARGB, RGBA, BGRA, RGB, BGR and Grayscale byte layouts for  
-RAW images
+- Ultra-high dpi support for PDF to image conversion (output images up to 65536x65536 pixels)
+- ARGB, RGBA, BGRA, RGB, BGR and Grayscale byte layouts for RAW images
 - PDF to multipage TIFF (color / grayscale / B&W CCITT G4),
 - Supported PDF features for rendering:
   - Filters: Flate, LZW, ASCII 85, ASCII Hex, CCITT Fax, DCT, JBIG2
-  - Colorspaces: RGB, CMYK, Gray, CalRGB, CalGray, Lab, ICC, Indexed,  
-Separation, DeviceN
+  - Colorspaces: RGB, CMYK, Gray, CalRGB, CalGray, Lab, ICC, Indexed, Separation, DeviceN
   - Shadings: function based, axial and radial
   - Patterns: colored, uncolored and shading
   - Blend modes: all
