@@ -20,8 +20,8 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Universal Windows Platform
 - .NET Core 2.x/3.x
 - .NET Standard 2.x
-- .NET 5
-- .NET 6
+- .NET 5 / 6 / 7
+
 
 **DOCUMENT FEATURES**
 
