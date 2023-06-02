@@ -158,11 +158,13 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
   - Text (sticky notes) annotations
   - Rubber stamp annotations
   - Square and circle annotations
+  - Cloud square annotations
   - File attachment annotations
   - Link annotations (hyperlinks)
   - Line annotations
   - Ink annotations
   - Polygon and polyline annotations
+  - Cloud polygon annotations
   - Text markup annotations: highlight, underline, strikeout, squiggly
   - Free text (typewriter) annotations
   - Sound annotations

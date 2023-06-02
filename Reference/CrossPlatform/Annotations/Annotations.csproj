@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XFINIUM.PDF.NET" Version="10.2.0.0" />
+    <PackageReference Include="XFINIUM.PDF.NET" Version="12.1.0.0" />
   </ItemGroup>
 
 </Project>

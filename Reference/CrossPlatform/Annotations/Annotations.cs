@@ -36,6 +36,8 @@ namespace Xfinium.Pdf.Samples
 
             CreatePolylineAnnotations(document, helvetica);
 
+            CreateCloudAnnotations(document, helvetica);
+
             CreateRubberStampAnnotations(document, helvetica);
 
             CreateTextMarkupAnnotations(document, helvetica);
@@ -128,16 +130,18 @@ namespace Xfinium.Pdf.Samples
             page.Annotations.Add(square1);
             square1.Author = "Xfinium.pdf";
             square1.Contents = "Square annotation with red border";
-            square1.BorderColor = new PdfRgbColor(255, 0, 0);
-            square1.BorderWidth = 3;
+            square1.Border = new PdfAnnotationBorder();
+            square1.Border.Color = new PdfRgbColor(255, 0, 0);
+            square1.Border.Width = 3;
             square1.VisualRectangle = new PdfVisualRectangle(50, 70, 250, 150);
 
             PdfSquareAnnotation square2 = new PdfSquareAnnotation();
             page.Annotations.Add(square2);
             square2.Author = "Xfinium.pdf";
             square2.Contents = "Square annotation with blue interior";
-            square2.BorderColor = null;
-            square2.BorderWidth = 0;
+            square2.Border = new PdfAnnotationBorder();
+            square2.Border.Color = null;
+            square2.Border.Width = 0;
             square2.InteriorColor = new PdfRgbColor(0, 0, 192);
             square2.VisualRectangle = new PdfVisualRectangle(50, 270, 250, 150);
 
@@ -145,8 +149,9 @@ namespace Xfinium.Pdf.Samples
             page.Annotations.Add(square3);
             square3.Author = "Xfinium.pdf";
             square3.Contents = "Square annotation with yellow border and green interior";
-            square3.BorderColor = new PdfRgbColor(255, 255, 0);
-            square3.BorderWidth = 3;
+            square3.Border = new PdfAnnotationBorder();
+            square3.Border.Color = new PdfRgbColor(255, 255, 0);
+            square3.Border.Width = 3;
             square3.InteriorColor = new PdfRgbColor(0, 192, 0);
             square3.VisualRectangle = new PdfVisualRectangle(50, 470, 250, 150);
 
@@ -156,16 +161,18 @@ namespace Xfinium.Pdf.Samples
             page.Annotations.Add(circle1);
             circle1.Author = "Xfinium.pdf";
             circle1.Contents = "Circle annotation with red border";
-            circle1.BorderColor = new PdfRgbColor(255, 0, 0);
-            circle1.BorderWidth = 3;
+            circle1.Border = new PdfAnnotationBorder();
+            circle1.Border.Color = new PdfRgbColor(255, 0, 0);
+            circle1.Border.Width = 3;
             circle1.VisualRectangle = new PdfVisualRectangle(350, 70, 250, 150);
 
             PdfCircleAnnotation circle2 = new PdfCircleAnnotation();
             page.Annotations.Add(circle2);
             circle2.Author = "Xfinium.pdf";
             circle2.Contents = "Circle annotation with blue interior";
-            circle2.BorderColor = null;
-            circle2.BorderWidth = 0;
+            circle2.Border = new PdfAnnotationBorder();
+            circle2.Border.Color = null;
+            circle2.Border.Width = 0;
             circle2.InteriorColor = new PdfRgbColor(0, 0, 192);
             circle2.VisualRectangle = new PdfVisualRectangle(350, 270, 250, 150);
 
@@ -173,8 +180,9 @@ namespace Xfinium.Pdf.Samples
             page.Annotations.Add(circle3);
             circle3.Author = "Xfinium.pdf";
             circle3.Contents = "Circle annotation with yellow border and green interior";
-            circle3.BorderColor = new PdfRgbColor(255, 255, 0);
-            circle3.BorderWidth = 3;
+            circle3.Border = new PdfAnnotationBorder();
+            circle3.Border.Color = new PdfRgbColor(255, 255, 0);
+            circle3.Border.Width = 3;
             circle3.InteriorColor = new PdfRgbColor(0, 192, 0);
             circle3.VisualRectangle = new PdfVisualRectangle(350, 470, 250, 150);
         }
@@ -333,8 +341,9 @@ namespace Xfinium.Pdf.Samples
                 polygon.Author = "Xfinium.Pdf";
                 polygon.Contents = "Polygon annotation with " + vertices[i] + " vertices.";
                 polygon.Points = points;
-                polygon.LineColor = new PdfRgbColor(192, 0, 0);
-                polygon.LineWidth = 3;
+                polygon.Border = new PdfAnnotationBorder();
+                polygon.Border.Color = new PdfRgbColor(192, 0, 0);
+                polygon.Border.Width = 3;
                 polygon.InteriorColor = new PdfRgbColor(0, 0, 192);
 
                 centerY = centerY + 150;
@@ -372,11 +381,90 @@ namespace Xfinium.Pdf.Samples
                 polyline.Author = "Xfinium.Pdf";
                 polyline.Contents = "Polyline annotation with " + vertices[i] + " vertices.";
                 polyline.Points = points;
-                polyline.LineColor = new PdfRgbColor(192, 0, 0);
-                polyline.LineWidth = 3;
+                polyline.Border = new PdfAnnotationBorder();
+                polyline.Border.Color = new PdfRgbColor(192, 0, 0);
+                polyline.Border.Width = 3;
 
                 centerY = centerY + 150;
             }
+        }
+
+        private static void CreateCloudAnnotations(PdfFixedDocument document, PdfFont font)
+        {
+            PdfBrush blackBrush = new PdfBrush();
+
+            PdfPage page = document.Pages.Add();
+
+            page.Graphics.DrawString("Cloud square annotations", font, blackBrush, 50, 50);
+
+            PdfCloudSquareAnnotation cloudSquare1 = new PdfCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare1);
+            cloudSquare1.Author = "Xfinium.pdf";
+            cloudSquare1.Contents = "Cloud square annotation with red border";
+            cloudSquare1.Border = new PdfAnnotationBorder();
+            cloudSquare1.Border.Color = new PdfRgbColor(255, 0, 0);
+            cloudSquare1.Border.Width = 1;
+            cloudSquare1.Intensity = 1;
+            cloudSquare1.VisualRectangle = new PdfVisualRectangle(50, 70, 250, 150);
+
+            PdfCloudSquareAnnotation cloudSquare2 = new PdfCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare2);
+            cloudSquare2.Author = "Xfinium.pdf";
+            cloudSquare2.Contents = "Cloud square annotation with blue interior";
+            cloudSquare2.Border = new PdfAnnotationBorder();
+            cloudSquare2.Border.Color = null;
+            cloudSquare2.Border.Width = 0;
+            cloudSquare2.Intensity = 2;
+            cloudSquare2.InteriorColor = new PdfRgbColor(0, 0, 192);
+            cloudSquare2.VisualRectangle = new PdfVisualRectangle(50, 270, 250, 150);
+
+            PdfCloudSquareAnnotation cloudSquare3 = new PdfCloudSquareAnnotation();
+            page.Annotations.Add(cloudSquare3);
+            cloudSquare3.Author = "Xfinium.pdf";
+            cloudSquare3.Contents = "Cloud square annotation with yellow border and green interior";
+            cloudSquare3.Border = new PdfAnnotationBorder();
+            cloudSquare3.Border.Color = new PdfRgbColor(255, 255, 0);
+            cloudSquare3.Border.Width = 1;
+            cloudSquare3.InteriorColor = new PdfRgbColor(0, 192, 0);
+            cloudSquare3.VisualRectangle = new PdfVisualRectangle(50, 470, 250, 150);
+
+            page.Graphics.DrawString("Cloud polygon annotations", font, blackBrush, 350, 50);
+
+            PdfCloudPolygonAnnotation cloudPolygon1 = new PdfCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon1);
+            cloudPolygon1.Author = "Xfinium.pdf";
+            cloudPolygon1.Contents = "Cloud polygon annotation with red border";
+            cloudPolygon1.Border = new PdfAnnotationBorder();
+            cloudPolygon1.Border.Color = new PdfRgbColor(255, 0, 0);
+            cloudPolygon1.Border.Width = 3;
+            cloudPolygon1.Points = new PdfPoint[] { new PdfPoint(350, 145), new PdfPoint(475, 70), new PdfPoint(600, 145), new PdfPoint(475, 220), new PdfPoint(350, 145) }; 
+
+            PdfCloudPolygonAnnotation cloudPolygon2 = new PdfCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon2);
+            cloudPolygon2.Author = "Xfinium.pdf";
+            cloudPolygon2.Contents = "Cloud polygon annotation with blue interior";
+            cloudPolygon2.Border = new PdfAnnotationBorder();
+            cloudPolygon2.Border.Color = null;
+            cloudPolygon2.Border.Width = 0;
+            cloudPolygon2.InteriorColor = new PdfRgbColor(0, 0, 192);
+            cloudPolygon2.Intensity = 1;
+            cloudPolygon2.Points = new PdfPoint[] { 
+                new PdfPoint(350, 345), new PdfPoint(370, 290), new PdfPoint(475, 270), new PdfPoint(580, 290), 
+                new PdfPoint(600, 345), new PdfPoint(580, 400), new PdfPoint(475, 420), new PdfPoint(370, 400), new PdfPoint(350, 345) 
+            };
+
+            PdfCloudPolygonAnnotation cloudPolygon3 = new PdfCloudPolygonAnnotation();
+            page.Annotations.Add(cloudPolygon3);
+            cloudPolygon3.Author = "Xfinium.pdf";
+            cloudPolygon3.Contents = "Cloud polygon annotation with yellow border and green interior";
+            cloudPolygon3.Border = new PdfAnnotationBorder();
+            cloudPolygon3.Border.Color = new PdfRgbColor(255, 255, 0);
+            cloudPolygon3.Border.Width = 1;
+            cloudPolygon3.InteriorColor = new PdfRgbColor(0, 192, 0);
+            cloudPolygon3.Points = new PdfPoint[] {
+                new PdfPoint(350, 545), new PdfPoint(455, 525), new PdfPoint(475, 470), new PdfPoint(495, 525),
+                new PdfPoint(600, 545), new PdfPoint(495, 565), new PdfPoint(475, 620), new PdfPoint(455, 565), new PdfPoint(350, 545)
+            };
         }
 
         private static void CreateRubberStampAnnotations(PdfFixedDocument document, PdfFont font)
