@@ -260,7 +260,9 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
   - Annotations: all types
   - Form fields: all types
 - Selective page content rendering: turn on/off vector graphics, text, images, annotations and form fields
+- Turn on/off layer visibility for PDF to image conversion
 - Support for external graphic engines for improved rendering speed
+- Multi-threaded PDF to image conversion
 
 **PDF VIEWING (Viewer Edition Only)**
 - Viewer controls for Windows Forms, Mac, WPF, UWP, iOS and Android
