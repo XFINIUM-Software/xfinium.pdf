@@ -82,4 +82,5 @@ The `PdfPageContentAnalysis` implements a parser for the page content stream. Wh
 | EMC | AnalyzeEndMarkedContentOperator() |
 
 The analysis is run by creating a `PdfPageAnalyzer` object on the specified page and calling its `RunAnalysis` method with the custom analysis as parameter.
+
 When the `PdfPageContentAnalysis.EnableExtendedOperatorInformation` property is set to true the corresponding visual object is provided to the path painting, path clipping, text showing and image showing operators.
