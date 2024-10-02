@@ -1,7 +1,11 @@
 The `PageAnalyzer` sample shows how to implement a custom page analysis. A page analysis is a read-only parser of a page content stream. 
+
 The `JsonExporter` class (inherits from `PdfPageContentAnalysis`) shows how to export the path objects in a page content stream as json objects.
+
 A custom page analysis is implemented by inheriting the `PdfPageContentAnalysis` and overriding any of the `Analyze*` methods.
+
 The `PdfPageContentAnalysis` implements a parser for the page content stream. When the analysis is run, the page content stream is parsed and for each operator in the page content stream its corresponding `Analyze` method is called. The operands are passed as parameters to the method.
+
 |Operator|Method|
 |---|---|
 | BX | AnalyzeBeginCompatibilitySectionOperator() |
