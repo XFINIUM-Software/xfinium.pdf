@@ -224,6 +224,8 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Convert images to Grayscale
 - Replace page images
 - Remove page images
+- Enhanced contextual information for path, text and image operators
+- High performance read-only page content analysis
 
 **CONTENT REDACTION**
 - Text redaction
