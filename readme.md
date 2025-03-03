@@ -64,6 +64,8 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 
 **FLOW DOCUMENT FEATURES**
 - Mixed formatted text
+- Left-to-Right and Right-to-Left text 
+- Complex scripts  
 - Superscript/subscript text
 - Images
 - Form XObjects
@@ -109,6 +111,8 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Images (see Images section) and form XObjects
 - Transparency groups
 - Single line and multi line text with vertical and horizontal alignment, including justified text
+- Left-to-Right and Right-to-Left text 
+- Complex scripts  
 - Extended graphics states with support for fill and stroke alpha, blend modes and overprinting
 - Affine transformations: multiply, translate, rotate and scale
 - Shadings - function, axial and radial
@@ -126,6 +130,32 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Type3 fonts
 - Ansi and Unicode TrueType fonts with support for font sub-setting
 - Disable text copy/paste for Unicode TrueType fonts
+
+**COMPLEX SCRIPTS**
+- Left-to-Right and Right-to-Left text
+- Complex scripts:	
+  - Arabic	
+  - Bengali	
+  - Devanagari	
+  - Gujarati	
+  - Gurmukhi	
+  - Hebrew	
+  - Kannada	
+  - Kashmiri	
+  - Khmer	
+  - Kurdish	
+  - Lao	
+  - Malayalam	
+  - Myanmar Burmese	
+  - Oriya	
+  - Persian	
+  - Sindhi	
+  - Tamil	
+  - Telugu	
+  - Thai	
+  - Urdu	
+  - Uyghur 
+
 
 **IMAGES**
 - Load images from files and streams
@@ -178,6 +208,8 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Add, edit, remove and rename form fields
 - Support for text box fields, combo box fields, list box fields, push button fields, check box fields, radio button fields, signature fields
 - Read/Write (fill) form fields
+- Left-to-Right and Right-to-Left text 
+- Complex scripts  
 - Create custom appearances for field widgets
 - Flatten form fields
 - Form actions (see PDF actions)
