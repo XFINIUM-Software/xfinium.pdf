@@ -20,12 +20,14 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Universal Windows Platform
 - .NET Core 2.x/3.x
 - .NET Standard 2.x
-- .NET 5 / 6 / 7 / 8
+- .NET 5 / 6 / 7 / 8 / 9 / 10
 
 
 **DOCUMENT FEATURES**
 
 - Create and load PDF documents from files and streams
+- Convert PDF documents to images (see **PDF RENDERING** below)
+- Display PDF documents in Windows Forms & WPF applications (see **PDF VIEWING** below)
 - Grid layout and/or flow layout modes
 - Save PDF files in PDF/A-1B, PDF/A-2 B/U, PDF/A-3 B/U format-
 - Save PDF files in PDF/UA-1 format
@@ -299,12 +301,74 @@ If you are looking a feature that is not listed, feel free to  [contact us](http
 - Multi-threaded PDF to image conversion
 
 **PDF VIEWING (Viewer Edition Only)**
-- Viewer controls for Windows Forms, Mac, WPF, UWP, iOS and Android
-- Viewer controls for .NET Core 3.0/3.1, .NET 5, .NET 6 Windows Forms and WPF
-- Document navigation (page up/down)
-- Swipe to scroll (if supported by platform),
-- Page zoom in/out
-- Pinch to zoom (if supported by platform)
-- FitWidth zoom mode
-- Add and remove pages
-- PageClick/PageTap and PageDoubleClick/PageDoubleTap events
+- Display PDF files in Windows Forms and WPF applications (.NET and .NET Framework supported)
+- Document zoom
+  * Fixed value zoom (100%, 200%, etc)
+  * Pinch-to-Zoom support
+  * CTRL + mouse wheel zoom
+- Flexible page layouts
+  * Column based layout - display pages in multiple columns
+  * Row based - display pages in multiple rows
+  * Fixed grid - display a fixed grid (m*n) of pages
+- Pages management
+  * Add/delete pages
+  * Rotate pages
+  * Default page context menu to rotate or delete pages
+- Content selection
+  * Select text
+  * Select rectangular are on the page
+  * CTRL-C to copy selected text
+- Text search
+  * Search current page / visible pages / all pages in a document
+  * Highlight all search results or highlight search results one by one
+  * Search options: case sensitive, accent sensitive, match whole word, regex search
+- Highlight text
+  * Highlight
+  * Flat underline
+  * Squiggly underline
+  * Strikeout
+- Annotations
+  * Add new annotations
+    - Text
+    - Rubber stamp
+    - Circle
+    - Square
+    - Cloud square
+    - Line
+    - Polyline
+    - Polygon
+    - Cloud polygon
+    - Ink
+    - Link
+    - File attachment
+    - Free text
+  * Edit and remove annotations from code or using the default annotation context menu
+  * Move and resize annotations
+  * Select one or more annotations (CTRL + mouse or draw a selection rectangle) for group manipulation
+- PDF Form
+  * Fill PDF forms
+  * Add new form fields
+    - Textbox
+    - CheckBox
+    - RadioButton
+    - ComboBox
+    - ListBox
+    - PushButton
+    - Signature
+  * Edit and remove form fields from code or using the default field context menu
+  * Select one or more fields (CTRL + mouse or draw a selection rectangle) for group manipulation
+  * Extended form design operations
+    - Align left
+    - Align center
+    - Align right
+    - Align top
+    - Align middle
+    - Align bottom
+    - Center horizontally
+    - Center vertically
+    - Center both
+    - Make same width
+    - Make same height
+    - Make same size
+    - Distribute horizontally
+    - Distribute vertically

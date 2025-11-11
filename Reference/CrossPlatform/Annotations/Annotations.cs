@@ -279,8 +279,9 @@ namespace Xfinium.Pdf.Samples
             PdfInkAnnotation ia = new PdfInkAnnotation();
             page.Annotations.Add(ia);
             ia.Contents = "I am an ink annotation.";
-            ia.InkColor = new PdfRgbColor(255, 0, 255);
-            ia.InkWidth = 5;
+            ia.Ink = new PdfAnnotationBorder();
+            ia.Ink.Color = new PdfRgbColor(255, 0, 255);
+            ia.Ink.Width = 5;
             ia.Points = points;
         }
 
