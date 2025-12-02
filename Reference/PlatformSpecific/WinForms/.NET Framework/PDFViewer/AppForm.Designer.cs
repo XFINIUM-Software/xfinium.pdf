@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppForm));
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance1 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance2 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance3 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance4 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance5 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance6 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance7 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance8 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance9 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance10 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance11 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance12 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance13 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance14 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance15 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance16 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance17 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.Layouts.PdfColumnBasedPageDisplayLayout pdfColumnBasedPageDisplayLayout1 = new Xfinium.Pdf.View.Layouts.PdfColumnBasedPageDisplayLayout();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance18 = new Xfinium.Pdf.View.PathVisualAppearance();
-            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance19 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance20 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance21 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance22 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance23 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance24 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance25 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance26 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance27 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance28 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance29 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance30 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance31 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance32 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance33 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance34 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance35 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance36 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.Layouts.PdfColumnBasedPageDisplayLayout pdfColumnBasedPageDisplayLayout2 = new Xfinium.Pdf.View.Layouts.PdfColumnBasedPageDisplayLayout();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance37 = new Xfinium.Pdf.View.PathVisualAppearance();
+            Xfinium.Pdf.View.PathVisualAppearance pathVisualAppearance38 = new Xfinium.Pdf.View.PathVisualAppearance();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.tsbOpen = new System.Windows.Forms.ToolStripButton();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
@@ -135,6 +135,9 @@
             this.tsbMatchRegEx = new System.Windows.Forms.ToolStripButton();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.cmsOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmpOpenIncremental = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmOpenFull = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMain.SuspendLayout();
             this.tscApp.BottomToolStripPanel.SuspendLayout();
             this.tscApp.ContentPanel.SuspendLayout();
@@ -145,6 +148,7 @@
             this.tsForms.SuspendLayout();
             this.tsTextMarkup.SuspendLayout();
             this.tsSearch.SuspendLayout();
+            this.cmsOpen.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsMain
@@ -405,35 +409,36 @@
             // 
             // pdfView
             // 
-            this.pdfView.AnnotationSelectionRectangleAppearance = pathVisualAppearance1;
-            this.pdfView.DefaultCircleAnnotationAppearance = pathVisualAppearance2;
-            this.pdfView.DefaultCloudSquareAnnotationAppearance = pathVisualAppearance3;
-            this.pdfView.DefaultFileAttachmentAnnotationAppearance = pathVisualAppearance4;
-            this.pdfView.DefaultFormFieldAppearance = pathVisualAppearance5;
-            this.pdfView.DefaultFreeTextAnnotationAppearance = pathVisualAppearance6;
-            this.pdfView.DefaultHighlightAnnotationAppearance = pathVisualAppearance7;
-            this.pdfView.DefaultInkAnnotationAppearance = pathVisualAppearance8;
-            this.pdfView.DefaultLineAnnotationAppearance = pathVisualAppearance9;
-            this.pdfView.DefaultLinkAnnotationAppearance = pathVisualAppearance10;
-            this.pdfView.DefaultPolylineAnnotationAppearance = pathVisualAppearance11;
-            this.pdfView.DefaultRubberStampAnnotationAppearance = pathVisualAppearance12;
-            this.pdfView.DefaultSquareAnnotationAppearance = pathVisualAppearance13;
-            this.pdfView.DefaultSquigglyAnnotationAppearance = pathVisualAppearance14;
-            this.pdfView.DefaultStrikeoutAnnotationAppearance = pathVisualAppearance15;
-            this.pdfView.DefaultTextAnnotationAppearance = pathVisualAppearance16;
-            this.pdfView.DefaultUnderlineAnnotationAppearance = pathVisualAppearance17;
+            this.pdfView.AnnotationSelectionRectangleAppearance = pathVisualAppearance20;
+            this.pdfView.ContentPosition = new System.Drawing.Point(0, 0);
+            this.pdfView.DefaultCircleAnnotationAppearance = pathVisualAppearance21;
+            this.pdfView.DefaultCloudSquareAnnotationAppearance = pathVisualAppearance22;
+            this.pdfView.DefaultFileAttachmentAnnotationAppearance = pathVisualAppearance23;
+            this.pdfView.DefaultFormFieldAppearance = pathVisualAppearance24;
+            this.pdfView.DefaultFreeTextAnnotationAppearance = pathVisualAppearance25;
+            this.pdfView.DefaultHighlightAnnotationAppearance = pathVisualAppearance26;
+            this.pdfView.DefaultInkAnnotationAppearance = pathVisualAppearance27;
+            this.pdfView.DefaultLineAnnotationAppearance = pathVisualAppearance28;
+            this.pdfView.DefaultLinkAnnotationAppearance = pathVisualAppearance29;
+            this.pdfView.DefaultPolylineAnnotationAppearance = pathVisualAppearance30;
+            this.pdfView.DefaultRubberStampAnnotationAppearance = pathVisualAppearance31;
+            this.pdfView.DefaultSquareAnnotationAppearance = pathVisualAppearance32;
+            this.pdfView.DefaultSquigglyAnnotationAppearance = pathVisualAppearance33;
+            this.pdfView.DefaultStrikeoutAnnotationAppearance = pathVisualAppearance34;
+            this.pdfView.DefaultTextAnnotationAppearance = pathVisualAppearance35;
+            this.pdfView.DefaultUnderlineAnnotationAppearance = pathVisualAppearance36;
             this.pdfView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pdfView.Document = this.pdfDocument;
             this.pdfView.GraphicRendererFactory = null;
             this.pdfView.Location = new System.Drawing.Point(0, 0);
             this.pdfView.Name = "pdfView";
-            this.pdfView.PageDisplayLayout = pdfColumnBasedPageDisplayLayout1;
-            this.pdfView.SelectionRectangleAppearance = pathVisualAppearance18;
+            this.pdfView.PageDisplayLayout = pdfColumnBasedPageDisplayLayout2;
+            this.pdfView.SelectionRectangleAppearance = pathVisualAppearance37;
             this.pdfView.Size = new System.Drawing.Size(1403, 303);
             this.pdfView.TabIndex = 0;
             this.pdfView.Text = "DocumentView";
             this.pdfView.TextSearchResultColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.pdfView.TextSelectionAppearance = pathVisualAppearance19;
+            this.pdfView.TextSelectionAppearance = pathVisualAppearance38;
             this.pdfView.UserInteractionMode = Xfinium.Pdf.View.PdfUserInteractionMode.PanAndScan;
             this.pdfView.ZoomChanged += new System.EventHandler<System.EventArgs>(this.pdfView_ZoomChanged);
             this.pdfView.ZoomModeChanged += new System.EventHandler<System.EventArgs>(this.pdfView_ZoomModeChanged);
@@ -1069,6 +1074,28 @@
             this.sfd.DefaultExt = "pdf";
             this.sfd.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
             // 
+            // cmsOpen
+            // 
+            this.cmsOpen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmpOpenIncremental,
+            this.tsmOpenFull});
+            this.cmsOpen.Name = "cmsOpen";
+            this.cmsOpen.Size = new System.Drawing.Size(243, 70);
+            // 
+            // tsmpOpenIncremental
+            // 
+            this.tsmpOpenIncremental.Name = "tsmpOpenIncremental";
+            this.tsmpOpenIncremental.Size = new System.Drawing.Size(242, 22);
+            this.tsmpOpenIncremental.Text = "Open in incremental load mode";
+            this.tsmpOpenIncremental.Click += new System.EventHandler(this.tsmpOpenIncremental_Click);
+            // 
+            // tsmOpenFull
+            // 
+            this.tsmOpenFull.Name = "tsmOpenFull";
+            this.tsmOpenFull.Size = new System.Drawing.Size(242, 22);
+            this.tsmOpenFull.Text = "Open in full load mode";
+            this.tsmOpenFull.Click += new System.EventHandler(this.tsmOpenFull_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,6 +1124,7 @@
             this.tsTextMarkup.PerformLayout();
             this.tsSearch.ResumeLayout(false);
             this.tsSearch.PerformLayout();
+            this.cmsOpen.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1188,6 +1216,9 @@
         private System.Windows.Forms.ToolStripButton tsbFindNext;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripComboBox tscbxSearchRange;
+        private System.Windows.Forms.ContextMenuStrip cmsOpen;
+        private System.Windows.Forms.ToolStripMenuItem tsmpOpenIncremental;
+        private System.Windows.Forms.ToolStripMenuItem tsmOpenFull;
     }
 }
 

@@ -16,7 +16,7 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="XFINIUM.PDF.View.NET.WinForms" Version="15.0.0.0" />
+    <PackageReference Include="XFINIUM.PDF.View.NET.WinForms" Version="15.0.1.0" />
   </ItemGroup>
 
 </Project>

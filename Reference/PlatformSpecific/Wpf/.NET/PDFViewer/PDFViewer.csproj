@@ -76,7 +76,7 @@
     <None Remove="Resources\Text.Underline.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="XFINIUM.PDF.View.NET.Wpf" Version="15.0.0.0" />
+    <PackageReference Include="XFINIUM.PDF.View.NET.Wpf" Version="15.0.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Annotations.Circle.png" />
