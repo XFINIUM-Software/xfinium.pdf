@@ -128,6 +128,7 @@
     <Resource Include="Resources\Annotations.Text.png" />
     <Resource Include="Resources\Annotations.CloudSquare.png" />
     <Resource Include="Resources\Annotations.Square.png" />
+    <Resource Include="Resources\Annotations.ToolTips.png" />
     <Resource Include="Resources\File.Annotations.png" />
     <Resource Include="Resources\File.Close.png" />
     <Resource Include="Resources\File.FitWidth.png" />
@@ -167,6 +168,7 @@
     <Resource Include="Resources\MatchWholeWord.png" />
     <Resource Include="Resources\RegularExpression.png" />
     <Resource Include="Resources\Search.png" />
+    <Resource Include="Resources\Settings.png" />
     <Resource Include="Resources\Text.Highlight.png" />
     <Resource Include="Resources\Text.Squiggly.png" />
     <Resource Include="Resources\Text.Strikeout.png" />

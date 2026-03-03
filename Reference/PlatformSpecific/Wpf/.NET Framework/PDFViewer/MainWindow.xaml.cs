@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Xfinium.Pdf;
+using Xfinium.Pdf.Actions;
+using Xfinium.Pdf.Annotations;
+using Xfinium.Pdf.Destinations;
 using Xfinium.Pdf.View;
 using Xfinium.Pdf.View.Content;
 using Xfinium.Pdf.View.Layouts;
@@ -270,6 +273,35 @@ namespace PDFViewer
             btnLayoutSingleRow.IsChecked = IsSingleRowLayout;
         }
 
+        private ICommand settingsCommand;
+        public ICommand SettingsCommand
+        {
+            get
+            {
+                return settingsCommand ?? (settingsCommand = new CommandHandler(() => SettingsCommandExecute(), () => SettingsCommandCanExecute));
+            }
+        }
+
+        public bool SettingsCommandCanExecute
+        {
+            get { return true; }
+        }
+
+        public void SettingsCommandExecute()
+        {
+            ContextMenu openCtxMenu = FindResource("SettingsMenu") as ContextMenu;
+            openCtxMenu.PlacementTarget = btnSettings;
+            openCtxMenu.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+            openCtxMenu.IsOpen = true;
+        }
+
+        private void miShowAnnotationToolTips_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem miShowAnnotationToolTips = sender as MenuItem;
+            miShowAnnotationToolTips.IsChecked = !miShowAnnotationToolTips.IsChecked;
+            documentView.AnnotationToolTips = miShowAnnotationToolTips.IsChecked ? new PdfVisualAnnotationToolTip() : null;
+        }
+
         private void documentView_UserInteractionModeChanged(object sender, EventArgs e)
         {
             btnAnnotationsEdit.IsChecked = documentView.UserInteractionMode == PdfUserInteractionMode.EditAnnotations;
@@ -310,6 +342,52 @@ namespace PDFViewer
         private void documentView_BeforeAnnotationDelete(object sender, PdfVisualAnnotationDeleteEventArgs e)
         {
             e.AllowDelete = MessageBox.Show("Are you sure you want to delete the selected annotation?", "XFINIUM.PDF Viewer - WPF", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
+        }
+
+        private void documentView_AnnotationToolTipContentRequested(object sender, PdfVisualAnnotationToolTipContentRequestedEventArgs e)
+        {
+            if (e.VisualAnnotation.Annotation.Type == PdfAnnotationType.Link)
+            {
+                PdfLinkAnnotation la = e.VisualAnnotation.Annotation as PdfLinkAnnotation;
+                PdfUriAction uriAction = la.Action as PdfUriAction;
+                if (uriAction != null)
+                {
+                    e.Title = "";
+                    e.Contents = $"Link: {uriAction.URI}";
+                }
+                else
+                {
+                    PdfDestination linkDestination = la.Destination;
+                    if (linkDestination == null)
+                    {
+                        PdfGoToAction goToAction = la.Action as PdfGoToAction;
+                        if (goToAction != null)
+                        {
+                            linkDestination = goToAction.Destination;
+                        }
+                    }
+
+                    if (linkDestination != null)
+                    {
+                        e.Title = "";
+                        switch (linkDestination.Type)
+                        {
+                            case PdfDestinationType.PageDestination:
+                                PdfPageDirectDestination pageDestination = linkDestination as PdfPageDirectDestination;
+                                e.Contents = $"Destination page: {documentView.Document.FixedDocument.Pages.IndexOf(pageDestination.Page) + 1}";
+                                break;
+                            case PdfDestinationType.PageNumberDestination:
+                                PdfPageNumberDestination pageNumberDestination = linkDestination as PdfPageNumberDestination;
+                                e.Contents = $"Destination page: {pageNumberDestination.PageNumber + 1}";
+                                break;
+                            case PdfDestinationType.NamedDestination:
+                                PdfNamedDestination namedDestination = linkDestination as PdfNamedDestination;
+                                e.Contents = $"Destination name: {namedDestination.Name}";
+                                break;
+                        }
+                    }
+                }
+            }
         }
 
         private void cbxZoom_SelectionChanged(object sender, SelectionChangedEventArgs e)
