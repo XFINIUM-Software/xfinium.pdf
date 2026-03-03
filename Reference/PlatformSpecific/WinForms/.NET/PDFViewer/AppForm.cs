@@ -3,6 +3,9 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using Xfinium.Pdf;
+using Xfinium.Pdf.Actions;
+using Xfinium.Pdf.Annotations;
+using Xfinium.Pdf.Destinations;
 using Xfinium.Pdf.View;
 using Xfinium.Pdf.View.Content;
 using Xfinium.Pdf.View.Layouts;
@@ -480,6 +483,16 @@ namespace PDFViewer
             }
         }
 
+        private void tsbSettings_Click(object sender, EventArgs e)
+        {
+            tsbSettings.ShowDropDown();
+        }
+
+        private void tsmiShowAnnotationTooltips_Click(object sender, EventArgs e)
+        {
+            pdfView.AnnotationToolTips = tsmiShowAnnotationTooltips.Checked ? new PdfVisualAnnotationToolTip() : null;
+        }
+
         private void pdfView_UserInteractionModeChanged(object sender, EventArgs e)
         {
             tsbPan.Checked = pdfView.UserInteractionMode == PdfUserInteractionMode.PanAndScan;
@@ -544,6 +557,50 @@ namespace PDFViewer
         private void pdfView_BeforePageDelete(object sender, PdfVisualPageDeleteEventArgs e)
         {
             e.AllowDelete = MessageBox.Show("Are you sure you want to delete the current page?", "XFINIUM.PDF Viewer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+        private void pdfView_AnnotationToolTipContentRequested(object sender, PdfVisualAnnotationToolTipContentRequestedEventArgs e)
+        {
+            if (e.VisualAnnotation.Annotation.Type == PdfAnnotationType.Link)
+            {
+                PdfUriAction uriAction = (e.VisualAnnotation.Annotation as PdfLinkAnnotation).Action as PdfUriAction;
+                if (uriAction != null)
+                {
+                    e.Title = "";
+                    e.Contents = $"Link: {uriAction.URI}";
+                }
+                else
+                {
+                    PdfDestination linkDest = (e.VisualAnnotation.Annotation as PdfLinkAnnotation).Destination;
+                    if (linkDest == null)
+                    {
+                        PdfGoToAction goToAction = (e.VisualAnnotation.Annotation as PdfLinkAnnotation).Action as PdfGoToAction;
+                        if (goToAction != null)
+                        {
+                            linkDest = goToAction.Destination;
+                        }
+                    }
+                    if (linkDest != null)
+                    {
+                        e.Title = "";
+                        switch (linkDest.Type)
+                        {
+                            case PdfDestinationType.PageDestination:
+                                PdfPageDirectDestination pageDestination = linkDest as PdfPageDirectDestination;
+                                e.Contents = $"Destination page: {pdfView.Document.FixedDocument.Pages.IndexOf(pageDestination.Page) + 1}";
+                                break;
+                            case PdfDestinationType.PageNumberDestination:
+                                PdfPageNumberDestination pageNumberDestination = linkDest as PdfPageNumberDestination;
+                                e.Contents = $"Destination page: {pageNumberDestination.PageNumber + 1}";
+                                break;
+                            case PdfDestinationType.NamedDestination:
+                                PdfNamedDestination namedDestination = linkDest as PdfNamedDestination;
+                                e.Contents = $"Destination name: {namedDestination.Name}";
+                                break;
+                        }
+                    }
+                }
+            }
         }
 
         private void EnableTools(bool enable)

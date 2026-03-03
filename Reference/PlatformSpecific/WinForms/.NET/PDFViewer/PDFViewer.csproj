@@ -6,6 +6,7 @@
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,7 +17,7 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="XFINIUM.PDF.View.NET.WinForms" Version="15.0.1.0" />
+    <PackageReference Include="XFINIUM.PDF.View.NET.WinForms" Version="15.1.2.0" />
   </ItemGroup>
 
 </Project>
